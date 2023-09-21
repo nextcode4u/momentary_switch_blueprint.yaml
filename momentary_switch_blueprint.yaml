@@ -19,7 +19,7 @@ trigger:
     to: 'on'
 
 action:
-  - delay: "00:00:01"  # Adjust the duration as needed (1 second in this example)
+  - delay: 00:00:01  # Adjust the duration as needed (1 second in this example)
   - service: switch.turn_off
     target:
       entity_id: !input switch_entity
