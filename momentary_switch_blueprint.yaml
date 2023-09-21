@@ -4,7 +4,7 @@ blueprint:
   domain: automation
   
 input:
-  switch_entity:
+  switch_entity: !input Switch
     name: Switch Entity
     description: The switch entity to trigger momentarily.
     selector:
