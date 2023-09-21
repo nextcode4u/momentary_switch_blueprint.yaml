@@ -1,0 +1,24 @@
+blueprint:
+  name: momentary_switch_press
+  description: Simulate a momentary switch press
+
+input:
+  switch_entity:
+    name: Switch Entity
+    description: The switch entity to trigger momentarily.
+    selector:
+      entity:
+        domain: switch
+
+mode: restart
+
+trigger:
+  - platform: state
+    entity_id: !input switch_entity
+    to: 'on'
+
+action:
+  - delay: "00:00:01"  # Adjust the duration as needed (1 second in this example)
+  - service: switch.turn_off
+    target:
+      entity_id: !input switch_entity
