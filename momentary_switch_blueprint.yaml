@@ -1,24 +1,22 @@
 blueprint:
   name: Toggle to Momentary Switch
-  description: Convert a regular switch to a momentary switch.
-
-domain: automation
-input:
-  switch_entity:
-    name: Switch Entity
-    description: The switch entity to convert to a momentary switch.
-    selector:
-      entity:
-        domain: switch
-  toggle_duration:
-    name: Toggle Duration
-    description: Duration to toggle the switch (in seconds).
-    default: 1
-    selector:
-      number:
-        min: 0
-        step: 1
-        unit_of_measurement: sec
+  domain: automation
+  input:
+    switch_entity:
+      name: Switch Entity
+      description: The switch entity to convert to a momentary switch.
+      selector:
+        entity:
+          domain: switch
+    toggle_duration:
+      name: Toggle Duration
+      description: Duration to toggle the switch (in seconds).
+      default: 1
+      selector:
+        number:
+          min: 0
+          step: 1
+          unit_of_measurement: sec
 
 trigger:
   platform: state
