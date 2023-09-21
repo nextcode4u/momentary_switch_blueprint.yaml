@@ -1,6 +1,6 @@
 blueprint:
   name: Toggle to Momentary Switch
-  domain: automation
+  domain: automation_blueprint
   input:
     switch_entity:
       name: Switch Entity
@@ -10,13 +10,13 @@ blueprint:
           domain: switch
     toggle_duration:
       name: Toggle Duration
-      description: Duration to toggle the switch (in seconds).
-      default: 1
+      description: Duration to toggle the switch (in milliseconds).
+      default: 1000
       selector:
         number:
           min: 0
-          step: 1
-          unit_of_measurement: sec
+          step: 100
+          unit_of_measurement: ms
 
 trigger:
   platform: state
@@ -27,7 +27,8 @@ action:
   - service: switch.turn_on
     target:
       entity_id: !input switch_entity
-  - delay: !input toggle_duration
+  - delay:
+      milliseconds: !input toggle_duration
   - service: switch.turn_off
     target:
       entity_id: !input switch_entity
