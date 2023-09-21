@@ -1,7 +1,8 @@
 blueprint:
   name: momentary_switch_press
   description: Simulate a momentary switch press
-
+  domain: automation
+  
 input:
   switch_entity:
     name: Switch Entity
