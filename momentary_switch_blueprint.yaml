@@ -1,6 +1,6 @@
 blueprint:
   name: Toggle to Momentary Switch
-  domain: automation_blueprint
+  domain: automation
   input:
     switch_entity:
       name: Switch Entity
